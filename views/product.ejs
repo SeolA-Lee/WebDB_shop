@@ -1,0 +1,27 @@
+<table class="table table-bordered " style="text-align: center;">
+    <thead class="table-primary "><th>상품</th><th>상품명</th><th>가격</th><th>브랜드</th>
+        <% if(path !== 'root') { %>
+            <th colspan="2"></th>
+        <% } %>
+    </thead> 
+    <!-- 넘겨 받은 products 길이만큼 출력 -->
+    <% for(i = 0; i < products.length; i++) { %>
+        <tr>
+            <td><a href="/image/<%=products[i].image.split('\\').pop()%>" style="text-decoration: none;"><img src="/image/<%=products[i].image.split('\\').pop()%>" style="width:100px;height:100px; "></a></td>
+            <td><%=products[i].name%></td><td><%=products[i].price%></td><td><%=products[i].brand%></td>
+            <!-- '/'일 경우 수정, 삭제 링크는 없어짐 -->
+            <% if(path !== 'root') { %>
+                <td><a href="/product/update/<%=products[i].mer_id%>" style="text-decoration: none;">수정</a></td>
+                <td><a href="/product/delete/<%=products[i].mer_id%>" style="text-decoration: none;" onclick="if(confirm('정말로 삭제하시겠습니까?')==false) return false">삭제</a></td>
+            <% } %>
+        </tr>
+    <% } %>
+</table>
+<!-- 자료가 없을 시 나오는 멘트 -->
+<% if(products.length == 0) { %>
+        <p>자료가 없으니 상품 추가 버튼으로 코드를 추가해 주십시오.</p>
+<% } %>
+<!-- '/'일 경우 추가 버튼은 없어짐 -->
+<% if(path !== 'root') { %>
+    <a href="/product/create"><button class="btn btn-outline-secondary btn-sm" type="submit">상품 추가</button></a>  
+<% }%>

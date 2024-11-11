@@ -1,0 +1,8 @@
+# 종속성 캐시 무시
+node_modules/  packages/
+
+# 빌드 출력 디렉터리 무시
+**/bin
+
+# 숨겨진 시스템 파일 무시
+.DS_store
