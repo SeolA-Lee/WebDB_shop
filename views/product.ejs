@@ -7,7 +7,7 @@
     <!-- 넘겨 받은 products 길이만큼 출력 -->
     <% for(i = 0; i < products.length; i++) { %>
         <tr>
-            <td><a href="/image/<%=products[i].image.split('\\').pop()%>" style="text-decoration: none;"><img src="/image/<%=products[i].image.split('\\').pop()%>" style="width:100px;height:100px; "></a></td>
+            <td><a href="/detail/<%=products[i].mer_id%>" style="text-decoration: none;"><img src="/image/<%=products[i].image.split("\\").pop()%>" style="width:100px;height:100px; "></a></td>
             <td><%=products[i].name%></td><td><%=products[i].price%></td><td><%=products[i].brand%></td>
             <!-- '/'일 경우 수정, 삭제 링크는 없어짐 -->
             <% if(path !== 'root') { %>

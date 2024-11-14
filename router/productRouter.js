@@ -1,7 +1,7 @@
 const express = require('express');
 var router = express.Router();
 
-/* 이미지 upload를 위한 multer 추가 */
+// 이미지 upload를 위한 multer 추가
 const multer = require('multer');
 const upload = multer({
     storage : multer.diskStorage({

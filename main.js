@@ -27,18 +27,20 @@ app.use(bodyParser.urlencoded({extended : false}));
 var rootRouter = require('./router/rootRouter'); 
 var authRouter = require('./router/authRouter'); 
 var codeRouter = require('./router/codeRouter'); 
-var productRouter = require('./router/productRouter'); // 라우터 추가
-var personRouter = require('./router/personRouter');   // 라우터 추가
-var boardRouter = require('./router/boardRouter');     // 라우터 추가
+var productRouter = require('./router/productRouter'); 
+var personRouter = require('./router/personRouter');   
+var boardRouter = require('./router/boardRouter');    
+var purchaseRouter = require('./router/purchaseRouter'); // 라우터 추가
 
 app.use(express.static('public'));
 
 app.use('/', rootRouter);
 app.use('/auth', authRouter);
 app.use('/code', codeRouter); 
-app.use('/product', productRouter); // 경로 추가
-app.use('/person', personRouter);   // 경로 추가
-app.use('/board', boardRouter);     // 경로 추가
+app.use('/product', productRouter); 
+app.use('/person', personRouter);   
+app.use('/board', boardRouter);     
+app.use('/purchase', purchaseRouter); // 경로 추가
 
 app.get('/favicon.ico', (req, res) => res.writeHead(404));
-app.listen(3000, () => console.log('Week 10 Assignment - 202235296'));
+app.listen(3000, () => console.log('GC Shop Project'));

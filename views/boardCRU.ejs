@@ -2,8 +2,8 @@
     <% if(crud == 'create') { %> <!-- create 일 때 -->
         <h2><%-boardtype[0].title%> 작성</h2>
         <form action="/board/create_process" method="post" >
-            <input type="hidden" name="type_id" value="<%=boardtype[0].type_id%>">
-            <input type="hidden" name="loginid" value="<%=sntzedLoginId%>">
+            <input type="hidden" name="type_id" value="<%=boardtype[0].type_id%>" />
+            <input type="hidden" name="loginid" value="<%=sntzedLoginId%>" />
             <div class="mb-3">
                 <label class="form-label" for="id">제목</label> 
                 <input class="form-control" type="text" name="title" style = "width:300px;" />
@@ -12,6 +12,7 @@
                 <label class="form-label" for="id">작성자</label> 
                 <input class="form-control" type="text" name="name" value="<%=who%>" style = "width:300px;" disabled />
             </div>
+            <input type="hidden" name="date" value="<%=now%>" /> <!-- 추가 -->
             <div class="mb-3">
                 <label class="form-label" for="id">내용</label> 
                 <textarea class="form-control" name="content" style = "width:800px;height: 200px;"></textarea>
@@ -61,6 +62,7 @@
             <input type="hidden" name="type_id" value="<%=boardtype[0].type_id%>">
             <input type="hidden" name="board_id" value="<%=board[0].board_id%>">
             <input type="hidden" name="pNum" value="<%=pNum%>">
+            <!-- <input type = "hidden" name="loginid" value="<1%=boardtype[0].loginid%>"> -->
             <div class="mb-3">
                 <label class="form-label" for="id">제목</label> 
                 <input class="form-control" type="text" name="title" value="<%=board[0].title%>" style="width:300px;" />

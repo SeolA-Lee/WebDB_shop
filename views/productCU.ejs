@@ -1,6 +1,6 @@
 <div class="container">	
     <script>
-        function displayFileName(){
+        function displayFileName() {
             var fileName = $("#file").val();
             $(".upload-name").val(fileName);
         }
@@ -130,7 +130,7 @@
                 </tr>
             </table>
             <div class="mb-3">
-                <input class="upload-name" name = "image" value="<%=product[0].image%>" placeholder="이미지파일" />
+                <input class="upload-name" name="image" value="<%=product[0].image%>" placeholder="이미지파일" />
                 <input type="file" id="file" name="uploadFile" onchange="displayFileName()" />
             </div>
             <button class="btn btn-outline-primary btn-sm" type="submit">수정</button>
