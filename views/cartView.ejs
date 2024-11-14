@@ -1,0 +1,19 @@
+<table class="table table-bordered border-primary table-hover" style="text-align: center;">
+  <thead class="table-primary ">
+    <th>loginid</th><th>고객명</th><th>상품id</th><th>상품명</th><th>일자</th><th colspan="2"></th>
+  </thead> 
+  <!-- 넘겨 받은 cartviews 길이만큼 출력 -->
+  <% for(i = 0; i < cartviews.length; i++) { %>
+    <tr>
+      <td><%=cartviews[i].loginid%></td><td><%=cartviews[i].name%></td><td><%=cartviews[i].mer_id%></td>
+      <td><%=cartviews[i].product_name%></td><td><%=cartviews[i].date%></td>
+      <td><a href="/cartupdate/<%=cartviews[i].cart_id%>" style="text-decoration: none;">수정</a></td>
+      <td><a href="/delete/<%=cartviews[i].cart_id%>" onclick='if(confirm("정말로 삭제하시겠습니까?")==false){return false}' style="text-decoration: none;">삭제</a></td>
+    </tr>
+  <% } %>
+</table>
+<!-- 자료가 없을 시 나오는 멘트 -->
+<% if(cartviews.length == 0) { %>
+      <p>장바구니에 상품을 담은 고객이 없습니다.</p>
+<% } %>
+<!-- <a href="/person/create"><button class="btn btn-outline-secondary btn-sm" type="submit">고객 추가</button></a> -->

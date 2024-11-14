@@ -6,3 +6,6 @@ node_modules/  packages/
 
 # 숨겨진 시스템 파일 무시
 .DS_store
+
+# .jpeg 확장자 무시
+*.jpeg
