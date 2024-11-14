@@ -28,8 +28,19 @@ router.get('/cartupdate/:cartId', (req, res) => {
 router.post('/cartupdate_process', (req, res) => {
     root.cartupdate_process(req, res);
 });
-router.get('/delete/:cartId', (req, res) => {
+router.get('/cartdelete/:cartId', (req, res) => {
     root.cartdelete_process(req, res);
+});
+
+/* MNG - purchase RUD 관련 링크 추가 */
+router.get('/purchaseupdate/:purchaseId', (req, res) => {
+    root.purchaseupdate(req, res);
+});
+router.post('/purchaseupdate_process', (req, res) => {
+    root.purchaseupdate_process(req, res);
+});
+router.get('/purchasedelete/:purchaseId', (req, res) => {
+    root.purchasedelete_process(req, res);
 });
 
 module.exports = router;

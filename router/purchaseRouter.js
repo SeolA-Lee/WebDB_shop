@@ -31,4 +31,8 @@ router.post('/cartpurchase_process', (req, res) => {
     purchase.cartpurchase_process(req, res);
 });
 
+router.get('/view', (req, res) => {
+    purchase.view(req, res);
+});
+
 module.exports = router;

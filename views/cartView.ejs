@@ -8,7 +8,7 @@
       <td><%=cartviews[i].loginid%></td><td><%=cartviews[i].name%></td><td><%=cartviews[i].mer_id%></td>
       <td><%=cartviews[i].product_name%></td><td><%=cartviews[i].date%></td>
       <td><a href="/cartupdate/<%=cartviews[i].cart_id%>" style="text-decoration: none;">수정</a></td>
-      <td><a href="/delete/<%=cartviews[i].cart_id%>" onclick='if(confirm("정말로 삭제하시겠습니까?")==false){return false}' style="text-decoration: none;">삭제</a></td>
+      <td><a href="/cartdelete/<%=cartviews[i].cart_id%>" onclick='if(confirm("정말로 삭제하시겠습니까?")==false){return false}' style="text-decoration: none;">삭제</a></td>
     </tr>
   <% } %>
 </table>
@@ -16,4 +16,3 @@
 <% if(cartviews.length == 0) { %>
       <p>장바구니에 상품을 담은 고객이 없습니다.</p>
 <% } %>
-<!-- <a href="/person/create"><button class="btn btn-outline-secondary btn-sm" type="submit">고객 추가</button></a> -->

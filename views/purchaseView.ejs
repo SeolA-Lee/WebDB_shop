@@ -1,0 +1,21 @@
+<table class="table table-bordered border-primary table-hover" style="text-align: center;">
+  <thead class="table-primary ">
+    <th>고객ID</th><th>고객명</th><th>상품ID</th><th>상품명</th><th>구매일</th><th>가격</th><th>포인트</th>
+    <th>구매량</th><th>총가격</th><th>지불여부</th><th>취소여부</th><th>환불여부</th><th colspan="2"></th>
+  </thead> 
+  <!-- 넘겨 받은 purchaseviews 길이만큼 출력 -->
+  <% for(i = 0; i < purchaseviews.length; i++) { %>
+    <tr>
+      <td><%=purchaseviews[i].loginid%></td><td><%=purchaseviews[i].name%></td><td><%=purchaseviews[i].mer_id%></td>
+      <td><%=purchaseviews[i].product_name%></td><td><%=purchaseviews[i].date%></td><td><%=purchaseviews[i].price%> 원</td>
+      <td><%=purchaseviews[i].point%></td><td><%=purchaseviews[i].qty%></td><td><%=purchaseviews[i].total%> 원</td>
+      <td><%=purchaseviews[i].payYN%></td><td><%=purchaseviews[i].cancel%></td><td><%=purchaseviews[i].refund%></td>
+      <td><a href="/purchaseupdate/<%=purchaseviews[i].purchase_id%>" style="text-decoration: none;">수정</a></td>
+      <td><a href="/purchasedelete/<%=purchaseviews[i].purchase_id%>" onclick='if(confirm("정말로 삭제하시겠습니까?")==false){return false}' style="text-decoration: none;">삭제</a></td>
+    </tr>
+  <% } %>
+</table>
+<!-- 자료가 없을 시 나오는 멘트 -->
+<% if(purchaseviews.length == 0) { %>
+      <p>구매 이력이 있는 고객이 없습니다.</p>
+<% } %>
