@@ -1,9 +1,6 @@
 <table class="table table-bordered " style="text-align: center;">
-    <!-- <thead class="table-primary"><th>상품</th><th>상품명</th><th>단가</th><th>구매량</th><th>출금액</th><th>구매일</th><th>취소여부</th></thead>  -->
     <thead><th>상품</th><th>상품명</th><th>단가</th><th>구매량</th><th>총금액</th><th>구매일</th><th>취소여부</th></thead> 
-
     <!-- 넘겨 받은 purchaseLists 길이만큼 출력 -->
-    <!-- <form action="/purchase/cancel_process" method="post"> -->
         <% for(i = 0; i < purchaseLists.length; i++) { %>
             <tr>
                 <td><a href="/detail/<%=purchaseLists[i].mer_id%>" style="text-decoration: none;"><img src="/image/<%=purchaseLists[i].image.split("\\").pop()%>" style="width:100px; height:100px;"></a></td>
@@ -16,7 +13,6 @@
                 <% } %>
             </tr>
         <% } %>
-    <!-- </form> -->
 </table>
 <!-- 자료가 없을 시 나오는 멘트 -->
 <% if(purchaseLists.length == 0) { %>

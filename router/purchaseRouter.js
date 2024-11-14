@@ -18,4 +18,17 @@ router.get('/cancel/:purchaseId', (req, res) => {
     purchase.cancel_process(req, res);
 });
 
+router.get('/cart', (req, res) => {
+    purchase.cart(req, res);
+});
+router.post('/put_in_cart', (req, res) => {
+    purchase.put_in_cart(req, res);
+});
+router.post('/delete_process', (req, res) => {
+    purchase.delete_process(req, res);
+});
+router.post('/cartpurchase_process', (req, res) => {
+    purchase.cartpurchase_process(req, res);
+});
+
 module.exports = router;

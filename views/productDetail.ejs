@@ -9,8 +9,9 @@
     <% if(cls === 'CST') { %>
         <tr><td>
             <a href="/purchase/detail/<%=product[0].mer_id%>"><button class="btn btn-outline-primary btn-sm" type="submit">구매</button></a>
-            <form action = "#" method="post" style = "display : inline-block">
-                <input type="hidden" value="" name="mer_id">
+            <form action = "/purchase/put_in_cart" method="post" style = "display : inline-block">
+                <input type="hidden" value="<%=sntzedLoginId%>" name="loginid">
+                <input type="hidden" value="<%=product[0].mer_id%>" name="mer_id">
                 <button class="btn btn-outline-primary btn-sm" type="submit">장바구니</button>
             </form>
         </td></tr>
