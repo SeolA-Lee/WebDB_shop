@@ -1,0 +1,25 @@
+<h1><%=tableview[0].TABLE_NAME%> 자료 목록</h1>
+<table class="table table-bordered border-primary" style="text-align: center;">
+    <thead>
+        <!-- 넘겨 받은 tableview의 길이만큼 출력 -->
+        <% for(i = 0; i < tableview.length; i++) { %>
+            <td><%=tableview[i].COLUMN_COMMENT%></td>
+        <% } %>
+        <th colspan="3">
+    </thead> 
+    <!-- 넘겨 받은 tableview 길이만큼 출력 -->
+    <% for(i = 0; i < values.length; i++) {  %>
+        <tr>
+            <% for(j = 0; j < tableview.length; j++) { %>
+                <td><%=values[i][tableview[j].COLUMN_NAME]%></td>
+            <% } %>
+            <td><a href="#" style="text-decoration: none;">생성</a></td> 
+            <td><a href="#" style="text-decoration: none;">수정</a></td> 
+            <td><a href="#" style="text-decoration: none;" onclick="if(confirm('정말로 삭제하시겠습니까?')==false) return false">삭제</a></td>
+        </tr>
+    <% } %>
+</table>
+<% if(tableview.length == 0) { %>
+    <p>자료가 존재하지 않습니다.</p>
+<% } %>
+<a href="/table"><button class="btn btn-outline-primary btn-sm" type="button">테이블 목록 돌아가기</button></a> <!-- 버튼 클릭 시 view 화면으로 -->

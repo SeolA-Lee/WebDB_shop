@@ -1,0 +1,14 @@
+<table class="table table-bordered border-primary table-hover" style="text-align: center;">
+    <thead class="table-primary "><th>테이블명</th><th>테이블 설명</th></thead> 
+    <!-- 넘겨 받은 tables 길이만큼 출력 -->
+    <% for(i = 0; i < tables.length; i++) { %>
+        <tr>
+            <td><a href="/table/view/<%=tables[i].TABLE_NAME%>" style="text-decoration: none;"><%=tables[i].TABLE_NAME%></a></td>
+            <td><%=tables[i].TABLE_COMMENT%></td>
+        </tr>
+    <% } %>
+</table>
+<!-- 자료가 없을 시 나오는 멘트 -->
+<% if(tables.length === 0) { %>
+    <p>테이블이 존재하지 않습니다.</p>
+<% } %>
