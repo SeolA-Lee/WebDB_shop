@@ -1,24 +1,59 @@
 <form method="post">
+    <script>
+        function getCheckboxValue() {
+            var len = $("input.selectedBox:checked").length
+            var selectedMerIds = [];
+            var selectedPrices = [];
+            var selectedDates = [];
+            var selectedQtys = [];
+            if(len != 0) {
+                $("input.selectedBox:checked").each(function(e) {
+                    var tr = $(this).closest('tr');
+                    var td = tr.children();
+
+                    var merIds = $(this).val();
+                    var prices = td.eq(3).text().split(' ')[0];
+                    var dates = td.eq(4).text();
+                    var qtys = td.eq(5).children().val();
+                    console.log(dates);
+                    console.log(qtys);
+
+                    selectedMerIds.push(merIds);
+                    selectedPrices.push(prices);
+                    selectedDates.push(dates);
+                    selectedQtys.push(qtys);
+                });
+            }
+            $("#length").val(len);
+            $("#merIds").val(selectedMerIds);
+            $("#dates").val(selectedDates);
+            $("#prices").val(selectedPrices);
+            $("#qtys").val(selectedQtys);
+        }
+    </script>
     <table class="table table-bordered " style="text-align: center;">
         <thead><th>구매선택</th><th>상품</th><th>상품명</th><th>단가</th><th>담은날</th><th>수량</th></thead> 
         <!-- 넘겨 받은 cartLists 길이만큼 출력 -->
             <% for(i = 0; i < cartLists.length; i++) { %>
                 <tr>
-                    <td><input type="checkbox" name="is_checked" value="<%=cartLists[i].cart_id%>" classes="checkboxes" /></td>
+                    <td><input type="checkbox" class="selectedBox" name="mer_id" value="<%=cartLists[i].mer_id%>" /></td>
                     <td><a href="/detail/<%=cartLists[i].mer_id%>" style="text-decoration: none;"><img src="<%=cartLists[i].image%>" style="width:100px; height:100px;"></a></td>
                     <td><%=cartLists[i].name%></td><td><%=cartLists[i].price%> 원</td><td><%=cartLists[i].date%></td>
                     <td><input type="number" name="qty" value="1" /></td>
-                    <input type="hidden" name="loginid" value="<%=sntzedLoginId%>">
-                    <input type="hidden" name="loginid" value="<%=cartLists[i].mer_id%>">
-                    <input type="hidden" name="price" value="<%=cartLists[i].price%>">
                 </tr>
             <% } %>
+            <input type="hidden" name="loginid" value="<%=sntzedLoginId%>" />
+            <input type="hidden" id="length" name="length" value="" />
+            <input type="hidden" id="merIds" name="mer_ids" value="" />
+            <input type="hidden" id="dates" name="dates" value="" />
+            <input type="hidden" id="prices" name="prices" value="" />
+            <input type="hidden" id="qtys" name="qtys" value="" />
     </table>
     <!-- 장바구니에 물건이 담겨있을 때 -->
     <% if(cartLists.length !== 0) { %>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-outline-primary btn-sm" formaction="/purchase/purchase_process" type="submit">결제</button>
-            <button class="btn btn-outline-primary btn-sm" formaction="/purchase/delete_process" type="submit">삭제</button>
+            <button class="btn btn-outline-primary btn-sm" formaction="/purchase/cartpurchase_process" onclick="getCheckboxValue()" type="submit">결제</button>
+            <button class="btn btn-outline-primary btn-sm" formaction="/purchase/cartdelete_process" type="submit">삭제</button>
             <a href="/"><button class="btn btn-outline-primary btn-sm" type="button">상품 목록 돌아가기</button></a>
         </div>
     <% } %>
