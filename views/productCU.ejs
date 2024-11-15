@@ -2,6 +2,8 @@
     <script>
         function displayFileName() {
             var fileName = $("#file").val();
+            var imageName = fileName.split('\\').pop();
+            $(".db-name").val(`/image/${imageName}`);
             $(".upload-name").val(fileName);
         }
     </script>
@@ -62,7 +64,8 @@
                 </tr>
             </table>
             <div class="mb-3">
-                <input class="upload-name" value="" name = "image" placeholder="이미지파일">
+                <input class="upload-name" value="" name="image" placeholder="이미지파일">
+                <input type="hidden" class="db-name" value="" name="file">
                 <input type="file" id="file" name="uploadFile" onchange="displayFileName()">
             </div>
             <button class="btn btn-outline-primary btn-sm" type="submit">입력</button>
@@ -131,6 +134,7 @@
             </table>
             <div class="mb-3">
                 <input class="upload-name" name="image" value="<%=product[0].image%>" placeholder="이미지파일" />
+                <input type="hidden" class="db-name" value="<%=product[0].image%>" name="file">
                 <input type="file" id="file" name="uploadFile" onchange="displayFileName()" />
             </div>
             <button class="btn btn-outline-primary btn-sm" type="submit">수정</button>

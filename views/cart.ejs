@@ -5,7 +5,7 @@
             <% for(i = 0; i < cartLists.length; i++) { %>
                 <tr>
                     <td><input type="checkbox" name="is_checked" value="<%=cartLists[i].cart_id%>" classes="checkboxes" /></td>
-                    <td><a href="/detail/<%=cartLists[i].mer_id%>" style="text-decoration: none;"><img src="/image/<%=cartLists[i].image.split("\\").pop()%>" style="width:100px; height:100px;"></a></td>
+                    <td><a href="/detail/<%=cartLists[i].mer_id%>" style="text-decoration: none;"><img src="<%=cartLists[i].image%>" style="width:100px; height:100px;"></a></td>
                     <td><%=cartLists[i].name%></td><td><%=cartLists[i].price%> 원</td><td><%=cartLists[i].date%></td>
                     <td><input type="number" name="qty" value="1" /></td>
                     <input type="hidden" name="loginid" value="<%=sntzedLoginId%>">
