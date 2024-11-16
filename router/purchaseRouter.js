@@ -24,11 +24,11 @@ router.get('/cart', (req, res) => {
 router.post('/put_in_cart', (req, res) => {
     purchase.put_in_cart(req, res);
 });
-router.post('/cartdelete_process', (req, res) => {
-    purchase.cartdelete_process(req, res);
-});
 router.post('/cartpurchase_process', (req, res) => {
     purchase.cartpurchase_process(req, res);
+});
+router.post('/cartdelete_process', (req, res) => {
+    purchase.cartdelete_process(req, res);
 });
 
 router.get('/view', (req, res) => {

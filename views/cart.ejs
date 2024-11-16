@@ -30,6 +30,12 @@
             $("#prices").val(selectedPrices);
             $("#qtys").val(selectedQtys);
         }
+        function confirmMessage() {
+            var len = $("input.selectedBox:checked").length
+            if(len != 0) {
+                if(!confirm("정말로 삭제하시겠습니까?")) { return false; }
+            }
+        }
     </script>
     <table class="table table-bordered " style="text-align: center;">
         <thead><th>구매선택</th><th>상품</th><th>상품명</th><th>단가</th><th>담은날</th><th>수량</th></thead> 
@@ -53,7 +59,8 @@
     <% if(cartLists.length !== 0) { %>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button class="btn btn-outline-primary btn-sm" formaction="/purchase/cartpurchase_process" onclick="getCheckboxValue()" type="submit">결제</button>
-            <button class="btn btn-outline-primary btn-sm" formaction="/purchase/cartdelete_process" type="submit">삭제</button>
+            <button class="btn btn-outline-primary btn-sm" formaction="/purchase/cartdelete_process" onclick="javascript:getCheckboxValue();confirmMessage();" type="submit">삭제</button>
+            <!-- <a href="/purchase/cartdelete/ onclick=""><button class="btn btn-outline-primary btn-sm" type="button">삭제</button></a> -->
             <a href="/"><button class="btn btn-outline-primary btn-sm" type="button">상품 목록 돌아가기</button></a>
         </div>
     <% } %>
