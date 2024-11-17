@@ -1,6 +1,6 @@
 <form method="post">
     <script>
-        function getCheckboxValue() {
+        function getCheckboxValue() { // checkbox에 체크 표시된 값들을 가져오는 함수
             var len = $("input.selectedBox:checked").length
             var selectedMerIds = [];
             var selectedPrices = [];
@@ -30,7 +30,7 @@
             $("#prices").val(selectedPrices);
             $("#qtys").val(selectedQtys);
         }
-        function confirmMessage() {
+        function confirmMessage() { // 삭제 전 여부를 물어보는 메시지를 보여주는 함수
             var len = $("input.selectedBox:checked").length
             if(len != 0) {
                 if(!confirm("정말로 삭제하시겠습니까?")) { return false; }
@@ -60,7 +60,6 @@
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button class="btn btn-outline-primary btn-sm" formaction="/purchase/cartpurchase_process" onclick="getCheckboxValue()" type="submit">결제</button>
             <button class="btn btn-outline-primary btn-sm" formaction="/purchase/cartdelete_process" onclick="javascript:getCheckboxValue();confirmMessage();" type="submit">삭제</button>
-            <!-- <a href="/purchase/cartdelete/ onclick=""><button class="btn btn-outline-primary btn-sm" type="button">삭제</button></a> -->
             <a href="/"><button class="btn btn-outline-primary btn-sm" type="button">상품 목록 돌아가기</button></a>
         </div>
     <% } %>
