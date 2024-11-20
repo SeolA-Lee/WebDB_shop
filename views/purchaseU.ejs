@@ -22,27 +22,34 @@
 				<% } %>
 			</select>
 		</div>
-		<div class="mb-3">
-			<label class="form-label" for="id">날짜</label> 
-			<input class="form-control" type="text" name="date" value="<%=purchaseview[0].date%>" style="width:300px;" disabled />
-		</div>
-		<div class="mb-3">
-			<label class="form-label" for="id">가격</label> 
-			<input class="form-control" type="text" name="price" value="<%=purchaseview[0].price%>" style="width:300px;" />
-		</div>
-		<div class="mb-3">
-			<label class="form-label" for="id">포인트</label> 
-			<input class="form-control" type="text" name="point" value="<%=purchaseview[0].point%>" style="width:300px;" />
-		</div>
-		<div class="mb-3">
-			<label class="form-label" for="id">수량</label> 
-			<input class="form-control" type="text" name="qty" value="<%=purchaseview[0].qty%>" style="width:300px;" />
-		</div>
-		<div class="mb-3">
-			<label class="form-label" for="id">총액</label> 
-			<input class="form-control" type="text" name="total" value="<%=purchaseview[0].total%>" style="width:300px;" />
-		</div>
-
+		<table>
+			<tr>
+				<td><div class="mb-3">
+					<label class="form-label" for="id">날짜</label> 
+					<input class="form-control" type="text" name="date" value="<%=purchaseview[0].date%>" style="width:300px;" disabled />
+				</div></td>
+				<td><div class="mb-3">
+					<label class="form-label" for="id">가격</label> 
+					<input class="form-control" type="text" name="price" value="<%=purchaseview[0].price%>" style="width:300px;" />
+				</div></td>
+			</tr>
+			<tr>
+				<td><div class="mb-3">
+					<label class="form-label" for="id">포인트</label> 
+					<input class="form-control" type="text" name="point" value="<%=purchaseview[0].point%>" style="width:300px;" />
+				</div></td>
+				<td><div class="mb-3">
+					<label class="form-label" for="id">수량</label> 
+					<input class="form-control" type="text" name="qty" value="<%=purchaseview[0].qty%>" style="width:300px;" />
+				</div></td>
+			</tr>
+			<tr>
+				<td><div class="mb-3">
+					<label class="form-label" for="id">총액</label> 
+					<input class="form-control" type="text" name="total" value="<%=purchaseview[0].total%>" style="width:300px;" />
+				</div></td>
+			</tr>
+		</table>
 		<div class="mb-3">
 			<label class="form-label" for="id_payYN">지불여부</label> 
 			<select name="payYN" id="id_payYN">

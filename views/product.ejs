@@ -18,9 +18,12 @@
     <% } %>
 </table>
 <!-- 자료가 없을 시 나오는 멘트 -->
-<% if(products.length == 0) { %>
-        <p>자료가 없으니 상품 추가 버튼으로 코드를 추가해 주십시오.</p>
-<% } %>
+<% if(products.length == 0) { 
+        if(cls === 'MNG') { %>
+            <p>자료가 없습니다. 상품을 추가해 주십시오.</p>
+        <% } else { %>
+            <p>등록된 상품이 없습니다.</p>
+<% } } %>
 <!-- '/'일 경우 추가 버튼은 없어짐 -->
 <% if(path !== 'root') { %>
     <a href="/product/create"><button class="btn btn-outline-secondary btn-sm" type="submit">상품 추가</button></a>  
