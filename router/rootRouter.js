@@ -43,17 +43,4 @@ router.get('/purchasedelete/:purchaseId', (req, res) => {
     root.purchasedelete_process(req, res);
 });
 
-/* MNG - Table Manage 관련 링크 추가 */
-router.get('/table', (req, res) => {
-    root.table(req, res);
-});
-router.get('/table/view/:tableName', (req, res) => {
-    root.tableview(req, res);
-});
-
-/* CEO - Analytic 관련 링크 추가 */
-router.get('/anal/customer', (req, res) => {
-    root.analytic(req, res);
-});
-
 module.exports = router;

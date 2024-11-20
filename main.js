@@ -30,7 +30,9 @@ var codeRouter = require('./router/codeRouter');
 var productRouter = require('./router/productRouter'); 
 var personRouter = require('./router/personRouter');   
 var boardRouter = require('./router/boardRouter');    
-var purchaseRouter = require('./router/purchaseRouter'); // 라우터 추가
+var purchaseRouter = require('./router/purchaseRouter'); 
+var tableRouter = require('./router/tableRouter');       
+var analRouter = require('./router/analRouter');         
 
 app.use(express.static('public'));
 
@@ -40,7 +42,9 @@ app.use('/code', codeRouter);
 app.use('/product', productRouter); 
 app.use('/person', personRouter);   
 app.use('/board', boardRouter);     
-app.use('/purchase', purchaseRouter); // 경로 추가
+app.use('/purchase', purchaseRouter); 
+app.use('/table', tableRouter);
+app.use('/anal', analRouter); 
 
 app.get('/favicon.ico', (req, res) => res.writeHead(404));
 app.listen(3000, () => console.log('GC Shop Project'));
