@@ -1,5 +1,5 @@
 <div class="container">	
-    <% if(crud == 'create') { %> <!-- create 일 때 -->
+    <% if(crud === 'create') { %> <!-- create 일 때 -->
             <h2>코드 입력</h2>
             <form action="/code/create_process" method="post" >
                 <div class="mb-3">
@@ -29,7 +29,7 @@
                 <button class="btn btn-outline-primary btn-sm" type="submit">입력</button>
                 <a href="/code/view"><button class="btn btn-outline-primary btn-sm" type="button">코드 목록 돌아가기</button></a> <!-- 버튼 클릭 시 view 화면으로 -->
             </form>
-    <% } if(crud == 'update') { %> <!-- update 일 때 -->
+    <% } if(crud === 'update') { %> <!-- update 일 때 -->
             <h2>코드 수정</h2>
             <form action="/code/update_process" method="post" >
                 <input type="hidden" name="main_id" value="<%=code[0].main_id%>"> <!-- main_id는 보이지 않게 -->

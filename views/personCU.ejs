@@ -1,7 +1,7 @@
 <div class="container">	
 	<% if(crud === 'register') { %> <!-- 회원가입을 눌렀을 때 -->
 		<h2>회원가입</h2>
-		<form action="/auth/register_process" method="post" >
+		<form action="/auth/register_process" method="post">
 			<div class="mb-3">
 				<label class="form-label" for="id">ID</label> 
 				<input class="form-control" type="text" name="loginid" placeholder="아이디를 입력해 주세요" style = "width:300px;" />
@@ -10,7 +10,7 @@
 				<label class="form-label" for="id">PW</label> 
 				<input class="form-control" type="text" name="password" placeholder="패스워드를 입력해 주세요" style = "width:300px;" />
 			</div>
-			<div class="mb-3" >
+			<div class="mb-3">
 				<label class="form-label" for="id">이름</label> 
 				<input class="form-control" type="text" name="name" placeholder="이름을 입력해 주세요" value="" style = "width:300px;" />
 			</div>
@@ -26,12 +26,11 @@
 				<label class="form-label" for="id">생일</label> 
 				<input class="form-control" type="text" name="birth" placeholder="YYYYMMDD" value="" style = "width:300px;" />
 			</div>
-			
 			<button class="btn btn-outline-primary btn-sm" type="submit">입력</button>
 		</form>	
 	<% } if(crud === 'create') { %> <!-- 관리자 권한에서 person 목록을 create 할 때-->
 		<h2>관리자 기능 : 회원 생성</h2>
-		<form action="/person/create_process" method="post" >
+		<form action="/person/create_process" method="post">
 			<div class="mb-3">
 				<label class="form-label" for="id">ID</label> 
 				<input class="form-control" type="text" name="loginid" placeholder="아이디를 입력해 주세요" style = "width:300px;" />
@@ -40,7 +39,7 @@
 				<label class="form-label" for="id">PW</label> 
 				<input class="form-control" type="text" name="password" placeholder="패스워드를 입력해 주세요" style = "width:300px;" />
 			</div>
-			<div class="mb-3" >
+			<div class="mb-3">
 				<label class="form-label" for="id">이름</label> 
 				<input class="form-control" type="text" name="name" placeholder="이름을 입력해 주세요" style = "width:300px;" />
 			</div>
@@ -79,13 +78,13 @@
 		</form>	
 	<% } if(crud === 'update') { %> <!-- 관리자 권한에서 person 목록을 update 할 때-->
 		<h2>관리자 기능 : 회원 정보 수정</h2>
-		<form action="/person/update_process" method="post" >
-			<input type="hidden" name="loginid" value="<%=person[0].loginid%>"> <!-- loginid는 보이지 않게 -->
+		<form action="/person/update_process" method="post">
+			<input type="hidden" name="loginid" value="<%=person[0].loginid%>"> 
 			<div class="mb-3">
 				<label class="form-label" for="id">PW</label> 
 				<input class="form-control" type="text" name="password" placeholder="패스워드를 입력해 주세요" value="<%=person[0].password%>" style = "width:300px;" />
 			</div>
-			<div class="mb-3" >
+			<div class="mb-3">
 				<label class="form-label" for="id">이름</label> 
 				<input class="form-control" type="text" name="name" placeholder="이름을 입력해 주세요" value="<%=person[0].name%>" style = "width:300px;" />
 			</div>

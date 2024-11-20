@@ -6,7 +6,7 @@
             var selectedPrices = [];
             var selectedDates = [];
             var selectedQtys = [];
-            if(len != 0) {
+            if(len !== 0) {
                 $("input.selectedBox:checked").each(function(e) {
                     var tr = $(this).closest('tr');
                     var td = tr.children();
@@ -32,7 +32,7 @@
         }
         function confirmMessage() { // 삭제 전 여부를 물어보는 메시지를 보여주는 함수
             var len = $("input.selectedBox:checked").length
-            if(len != 0) {
+            if(len !== 0) {
                 if(!confirm("정말로 삭제하시겠습니까?")) { return false; }
             }
         }
@@ -64,7 +64,7 @@
         </div>
     <% } %>
     <!-- 자료가 없을 시 나오는 멘트 -->
-    <% if(cartLists.length == 0) { %>
+    <% if(cartLists.length === 0) { %>
         <p>장바구니에 담은 상품이 없습니다. 상품을 담아보세요.</p>
         <a href="/"><button class="btn btn-outline-primary btn-sm" type="button">상품 목록 돌아가기</button></a>
     <% } %>

@@ -11,18 +11,18 @@
     <% } %>
 </table>
 <!-- 자료가 없을 시 나오는 멘트 -->
-<% if(boards.length == 0) { 
-        if(cls == 'MNG') { %> <!-- 관리자에게 -->
+<% if(boards.length === 0) { 
+        if(cls === 'MNG') { %> <!-- 관리자에게 -->
             <p>자료가 없으니 글쓰기 버튼으로 글을 추가해 주십시오.</p>
         <% } else { %>
             <p>글이 존재하지 않습니다.</p>
 <% } }%>
 <!-- 관리자는 모든 게시판에 대해 글쓰기 가능 -->
-<% if(cls == 'MNG') { %>
+<% if(cls === 'MNG') { %>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <a href="/board/create/<%=boardtype[0].type_id%>"><button type="button" class="btn btn-info me-md-2">글쓰기</button></a>
     </div>
-<% } if(cls == 'CST' && boardtype[0].write_YN == 'Y') { %>
+<% } if(cls === 'CST' && boardtype[0].write_YN === 'Y') { %>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <a href="/board/create/<%=boardtype[0].type_id%>"><button type="button" class="btn btn-info me-md-2">글쓰기</button></a>
     </div>

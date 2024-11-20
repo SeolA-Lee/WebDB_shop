@@ -1,6 +1,5 @@
 <div class="container">	
-    <!-- create 일 때 -->
-    <% if(crud === 'create') { %>
+    <% if(crud === 'create') { %> <!-- create 일 때 -->
         <h2>게시판 생성</h2>
         <form action="/board/type/create_process" method="post" >
             <div class="mb-3">
@@ -40,12 +39,10 @@
             <button class="btn btn-outline-primary btn-sm" type="submit">생성</button>
             <a href="/board/type/view"><button class="btn btn-outline-primary btn-sm" type="button">게시판 목록 돌아가기</button></a> 
         </form>
-    <% } %>
-    <!-- update 일 때 -->
-    <% if(crud === 'update') { %> 
+    <% } if(crud === 'update') { %> <!-- update 일 때 -->
         <h2>게시판 수정</h2>
         <form action="/board/type/update_process" method="post" >
-            <input type="hidden" name="type_id" value="<%=boardtype[0].type_id%>" /> <!-- type_id는 보이지 않게 -->
+            <input type="hidden" name="type_id" value="<%=boardtype[0].type_id%>" /> 
             <div class="mb-3">
                 <label class="form-label" for="id">제목</label> 
                 <input class="form-control" type="text" name="title" value="<%-boardtype[0].title%>" style = "width:300px;" />
